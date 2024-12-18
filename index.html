@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Welcome to the world of Prefix and Postfix</h1>
+    <h2>Try it yourself</h2>
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled />
+        <div class="button-container">
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button" onclick="appendToDisplay('+')">+</button>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button" onclick="appendToDisplay('-')">-</button>
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button" onclick="appendToDisplay('*')">*</button>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="calculateResult()">=</button>
+            <button class="button" onclick="appendToDisplay('/')">/</button>
+            <button class="button" onclick="clearDisplay()">C</button>
+        </div>
+        <div class="extra-buttons">
+            <button class="button" onclick="prefixCalc()">Prefix Calc</button>
+            <button class="button" onclick="postfixCalc()">Postfix Calc</button>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>What is Prefix and Postfix?</h2>
+        <p>
+            Prefix calculations usually imply that the operators precede the numbers, while Postfix is the opposite. Let's see some examples:
+            <br><br>
+            If we were to write the equation 9 + (2 * 3), in Prefix we would write <strong>+9 *23</strong>, which reads from left to right that 2 and 3 will be multiplied, then added to 9.
+            <br><br>
+            On the other hand, in Postfix we would write <strong>923 *+</strong>, which reads from the middle to reach the outside, where we multiply 2 and 3 (inside), then add the result to 9.
+            <br><br>
+            Have fun with the calculator!
+        </p>
+    </div>
+    <script src="index.js"></script>
+</body>
