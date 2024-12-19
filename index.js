@@ -42,6 +42,10 @@ function prefixCalc() {
                     result = operand1 * operand2;
                     break;
                 case '/':
+                    if (operand2 === 0) {
+                        document.getElementById('display').value = "Error: Division by zero."; //Cannot divide by 0
+                        return;
+                    }
                     result = operand1 / operand2;
                     break;
                 default:
@@ -52,7 +56,7 @@ function prefixCalc() {
         }
     }
     
-    //Error handling for if the user has entered the wrong pattern
+    //Error handling for if the user has entered the wrong pattern, as the result should be the last element in the stack
     if (stack.length !== 1) {
         document.getElementById('display').value = "Error: Invalid expression.";
         return;
@@ -92,6 +96,10 @@ function postfixCalc() {
                     result = operand1 * operand2;
                     break;
                 case '/':
+                    if (operand2 === 0) {
+                        document.getElementById('display').value = "Error: Division by zero."; //cannot divide by 0
+                        return;
+                    }
                     result = operand1 / operand2;
                     break;
                 default:
