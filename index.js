@@ -47,7 +47,7 @@ function prefixCalc() {
                 default:
                     throw new Error("Invalid");
             }
-            // Push the result back onto the stack
+            // Push the result back into the stack
             stack.push(result);
         }
     }
@@ -58,7 +58,46 @@ function prefixCalc() {
     document.getElementById('display').value = finalResult;
 }
 
-//To be defined
+
 function postfixCalc() {
-    alert('Postfix calculation function not defined yet.');
+    const input = document.getElementById('display').value;
+    const stack = [];
+    
+    // Split the input into an array, but we don't reverse here so that we can pop from left to right
+    const character = input.split('');
+    
+    for (let char of character) {
+        if (!isNaN(char)) {
+            stack.push(parseInt(char)); //if char is a number, push it into the stack by parsing the string into an integer
+        } else {
+            // The item in the array is an operator, so we pop 2 integers from the stack to do the operation on them
+            const operand2 = stack.pop();
+            const operand1 = stack.pop();
+            
+            let result;
+            switch (char) {
+                case '+':
+                    result = operand1 + operand2;
+                    break;
+                case '-':
+                    result = operand1 - operand2;
+                    break;
+                case '*':
+                    result = operand1 * operand2;
+                    break;
+                case '/':
+                    result = operand1 / operand2;
+                    break;
+                default:
+                    throw new Error("Unknown operator: " + token);
+            }
+            // Push the result back into the stack
+            stack.push(result);
+        }
+    }
+    
+    // The final result is the last element in the stack
+    const finalResult = stack.pop();
+    // Display the result
+    document.getElementById('display').value = finalResult;
 }
