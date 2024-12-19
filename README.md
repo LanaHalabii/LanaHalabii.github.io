@@ -3,4 +3,4 @@ The pre-post calculator is basically a calculator for **Prefix** and **Postfix**
 In this calculator, I designed its look using basic HTML and CSS, and managed the functions of the calculator by implementing javascript. 
 
 ## How To
-It is very easy to use the calculator. You can just go [here](LanaHalabii/LanaHalabii.github.io) and try out the calculator yourself! I have included some examples there for you to try out, or you could also look up Prefix and Postfix expressions online and try them using the calculator. 
+It is very easy to use the calculator. You can just go [here](https://lanahalabii.github.io/) and try out the calculator yourself! I have included some examples there for you to try out, or you could also look up Prefix and Postfix expressions online and try them using the calculator. 
