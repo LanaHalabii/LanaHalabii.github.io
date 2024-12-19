@@ -14,9 +14,48 @@ function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
-//To be defined
 function prefixCalc() {
-    alert('Prefix calculation function not defined yet.');
+    const input = document.getElementById('display').value;
+    const stack = [];
+    
+    // Split the input into an array
+    // Reverse the input for prefix evaluation so that we can pop from the end (working from left to right)
+    const character = input.split('').reverse(); 
+    
+    for (let char of character) {
+        if (!isNaN(char)) {
+            stack.push(parseInt(char)); // If char is a number, push it to the stack by parsing the string into an integer
+        } else {
+            // The item in the array is an operator, so we pop 2 integers from the stack to do the operation on them
+            const operand1 = stack.pop();
+            const operand2 = stack.pop();
+            
+            let result;
+            switch (char) {
+                case '+':
+                    result = operand1 + operand2;
+                    break;
+                case '-':
+                    result = operand1 - operand2;
+                    break;
+                case '*':
+                    result = operand1 * operand2;
+                    break;
+                case '/':
+                    result = operand1 / operand2;
+                    break;
+                default:
+                    throw new Error("Invalid");
+            }
+            // Push the result back onto the stack
+            stack.push(result);
+        }
+    }
+    
+    // The final result is the last element in the stack
+    const finalResult = stack.pop();
+    // Display the result
+    document.getElementById('display').value = finalResult;
 }
 
 //To be defined
