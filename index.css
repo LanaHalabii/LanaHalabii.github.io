@@ -54,14 +54,37 @@ body {
 
 h1, h2 {
     text-align: center;
-    color: #d5006d; /* Warm color for headers */
+    color: #d5006d; 
 }
 
 .info-section {
     justify-content: left;
     color: white;
     margin-top: 50px;
+    width: 85%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-color: #ffcccb;
+    border-radius: 5px;
     
+}
+
+h4 {
+    color: #d5006d ;
+    margin-left: 5px;
+    font-size: 21px;
+}
+
+.info-section p {
+    margin-left: 5px;
+    font-size: 18px;
+    color: black;
+}
+
+ul, li {
+    font-size: 18px;
+    line-height: 1.5;
+    color: black;
 }
 
 

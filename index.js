@@ -52,6 +52,12 @@ function prefixCalc() {
         }
     }
     
+    //Error handling for if the user has entered the wrong pattern
+    if (stack.length !== 1) {
+        document.getElementById('display').value = "Error: Invalid expression.";
+        return;
+    }
+
     // The final result is the last element in the stack
     const finalResult = stack.pop();
     // Display the result
@@ -91,9 +97,15 @@ function postfixCalc() {
                 default:
                     throw new Error("Unknown operator: " + token);
             }
-            // Push the result back into the stack
+            // Push the result back Into the stack
             stack.push(result);
         }
+    }
+
+      //Error handling for if the user has entered the wrong pattern
+      if (stack.length !== 1) {
+        document.getElementById('display').value = "Error: Invalid expression.";
+        return;
     }
     
     // The final result is the last element in the stack

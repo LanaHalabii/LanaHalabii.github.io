@@ -12,7 +12,7 @@
     <h1>Welcome to the world of Prefix and Postfix</h1>
     <h2>Try it yourself</h2>
     <div class="calculator">
-        <input type="text" class="display" id="display" disabled />
+        <input type="text" class="display" id="display" disabled/>
         <div class="button-container">
             <button class="button" onclick="appendToDisplay('1')">1</button>
             <button class="button" onclick="appendToDisplay('2')">2</button>
@@ -45,9 +45,28 @@
             If we were to write the equation 9 + (2 * 3), in Prefix we would write <strong>+9 *23</strong>, which reads from left to right that 2 and 3 will be multiplied, then added to 9.
             <br><br>
             On the other hand, in Postfix we would write <strong>923 *+</strong>, which reads from the middle to reach the outside, where we multiply 2 and 3 (inside), then add the result to 9.
-            <br><br>
-            Have fun with the calculator!
         </p>
     </div>
+
+    <div class="info-section">
+        <h2>Some Examples For You To try</h2>
+        <p>
+            <h4>Prefix Examples</h4>
+            <ul>
+                <li>Expression: +54 <br> Result: 9 </li>
+                <li>Expression: *94 <br> Result: 36 </li>
+                <li>Expression: *+25+67 <br> Result: 91 </li>
+            </ul>
+
+            <h4>Postfix Examples</h4>
+            <ul>
+                <li>Expression: 54+ <br> Result: 9 </li>
+                <li>Expression: 57+67+* <br> Result: 156 </li>
+                <li>Expression: 923*+ <br> Result: 15 </li>
+            </ul>
+        </p>
+    </div>
+
+
     <script src="index.js"></script>
 </body>
