@@ -1,6 +1,7 @@
 //Display the numbers on the calculator
 function appendToDisplay(value) {
-    document.getElementById('display').value += value;
+    const display = document.getElementById('display');
+    display.value += value; // Append the value to the display
 }
 
 //Evaluate the calculations of the calculator using 'eval' function
@@ -18,9 +19,9 @@ function prefixCalc() {
     const input = document.getElementById('display').value;
     const stack = [];
     
-    // Split the input into an array
+    // Split the input into an array, that accepts spaces
     // Reverse the input for prefix evaluation so that we can pop from the end (working from left to right)
-    const character = input.split('').reverse(); 
+    const character = input.split(/\s+/).reverse(); 
     
     for (let char of character) {
         if (!isNaN(char)) {
@@ -73,8 +74,9 @@ function postfixCalc() {
     const input = document.getElementById('display').value;
     const stack = [];
     
-    // Split the input into an array, but we don't reverse here so that we can pop from left to right
-    const character = input.split('');
+    // Split the input into an array that accepts spaces
+    // We don't reverse here so that we can pop from left to right
+    const character = input.split(/\s+/);
     
     for (let char of character) {
         if (!isNaN(char)) {
